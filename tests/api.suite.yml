@@ -1,0 +1,15 @@
+actor: ApiTester
+modules:
+    enabled:
+        - Asserts:
+        - REST:
+            url: /v1/
+            schemePath: tests/_data/
+            headers:
+                Content-Type: application/json
+                Accept: application/json
+            depends: [Yii2, Asserts]
+            part: Json
+        - \Helper\Api
+    config:
+        - Yii2
